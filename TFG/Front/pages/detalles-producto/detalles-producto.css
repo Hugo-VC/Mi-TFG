@@ -1,0 +1,120 @@
+@font-face {
+    font-family: "miFuente";
+    src: url("../../fonts/ArchivoBlack-Regular.ttf");
+}
+
+.cont_texto_informativo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+}
+
+.texto_informativo_1{
+    color: aliceblue;
+    font-size: 13px;
+
+    position: absolute;
+
+
+    transition: 2s ease;
+    opacity: 1;
+}
+
+.texto_informativo_2{
+    color: aliceblue;
+    font-size: 13px;
+
+    position: absolute;
+    
+
+    transition: 2s ease;
+    opacity: 0;
+}
+
+.cont_footer{
+    margin-top: 60px;
+    height: 50vh;
+
+    position: relative;
+}
+
+.linea_footer{
+    width: 30vw;
+    border-width: 3px;
+    color: white;
+}
+
+.redes_footer{
+    display: flex;
+ 
+}
+
+a{
+    text-decoration: none;
+}
+
+#mapa{
+    height: 20vh;
+    width: 32vw;
+    
+}
+
+.logo{
+    width: 200px;
+}
+
+.logo2{
+    width: 50px;
+
+    position: absolute;
+    top: 20px;
+    left: 15px;
+}
+
+.texto_secundario{
+    font-size: 12px;
+}
+
+.boton_alquilar{
+    height: 40px;
+    width: 200px;
+    border-radius: 6px;
+    background-color: white;
+    border: 2px solid grey;
+    font-size: 20px;
+    color: grey;
+    position: relative;
+    vertical-align: middle;
+    transition: 3s;
+}
+
+.boton_comprar{
+    height: 40px;
+    width: 200px;
+    border-radius: 6px;
+    background-color: rgb(255, 140, 0);
+    font-size: 20px;
+    color: white;
+    border: none;
+    position: relative;
+    vertical-align: middle;
+    transition: 3s;
+}
+
+.boton_alquilar:hover::after{
+    content: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="grey" class="bi bi-arrow-right" viewBox="0 0 16 16"><path fill="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>');
+    margin-left: 5px;
+    
+}
+
+.boton_comprar:hover::after {
+    content: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-arrow-right" viewBox="0 0 16 16"><path fill="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>');
+    margin-left: 5px;
+}
+
+#imagenProducto{
+    
+}

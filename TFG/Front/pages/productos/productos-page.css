@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "miFuente";
+    src: url("../../fonts/ArchivoBlack-Regular.ttf");
+}
+
+.cont_texto_informativo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+}
+
+.texto_informativo_1{
+    color: aliceblue;
+    font-size: 13px;
+
+    position: absolute;
+
+
+    transition: 2s ease;
+    opacity: 1;
+}
+
+.texto_informativo_2{
+    color: aliceblue;
+    font-size: 13px;
+
+    position: absolute;
+    
+
+    transition: 2s ease;
+    opacity: 0;
+}
+
+.cont_footer{
+    margin-top: 60px;
+    height: 50vh;
+
+    position: relative;
+}
+
+.linea_footer{
+    width: 30vw;
+    border-width: 3px;
+    color: white;
+}
+
+.redes_footer{
+    display: flex;
+ 
+}
+
+a{
+    text-decoration: none;
+}
+
+#mapa{
+    height: 20vh;
+    width: 32vw;
+    
+}
+
+.logo{
+    width: 200px;
+}
+
+.logo2{
+    width: 50px;
+
+    position: absolute;
+    top: 20px;
+    left: 15px;
+}
+
+.precio{
+    font-size: 25px;
+}
+
+.cont_categoria{
+    width: 230px;
+}
+
+.precio-no-disponible {
+    font-size: 15px;
+}

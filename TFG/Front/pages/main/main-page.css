@@ -1,0 +1,147 @@
+@font-face {
+    font-family: "miFuente";
+    src: url("../../fonts/ArchivoBlack-Regular.ttf");
+}
+
+.cont_texto_informativo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+}
+
+.texto_informativo_1{
+    color: aliceblue;
+    font-size: 13px;
+
+    position: absolute;
+
+
+    transition: 2s ease;
+    opacity: 1;
+}
+
+.texto_informativo_2{
+    color: aliceblue;
+    font-size: 13px;
+
+    position: absolute;
+    
+
+    transition: 2s ease;
+    opacity: 0;
+}
+
+
+.carousel-item img{
+    width: 100vw;
+    height: 350px;
+    object-fit: cover;
+    
+}
+
+.container_cont_carousel{
+    width: 800px;
+}
+
+.carousel_titulo{
+    font-family: miFuente;
+    font-size: 50px;
+}
+
+.carousel_texto{
+    font-size: 18px;
+}
+
+.carousel_texto_secundario{
+    font-size: 12px;
+}
+
+.cont_compra_alquier{
+    margin-top: 60px;
+    
+}
+
+.cont_alquiler{
+    background-image: url("../../img/main/decoracion2.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    height: 85vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont_compra{
+    background-image: url("../../img/main/decoracion3.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    height: 85vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton_compra{
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+    height: 50px;
+    width: 300px;
+    border: 2px solid lightgrey;
+    opacity: 0.7;
+}
+
+.boton_compra:hover{
+    box-shadow: 1px 1px 20px;
+    transition: 0.3s;
+    opacity: 1;
+}
+
+.cont_footer{
+    margin-top: 60px;
+    height: 50vh;
+
+    position: relative;
+}
+
+.linea_footer{
+    width: 30vw;
+    border-width: 3px;
+    color: white;
+}
+
+.redes_footer{
+    display: flex;
+ 
+}
+
+a{
+    text-decoration: none;
+}
+
+#mapa{
+    height: 20vh;
+    width: 32vw;
+    
+}
+
+.logo{
+    width: 200px;
+}
+
+.logo2{
+    width: 50px;
+
+    position: absolute;
+    top: 20px;
+    left: 15px;
+}
+
+
