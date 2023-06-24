@@ -114,6 +114,7 @@ a{
 
 .enlace_productos{
     position: absolute;
+    top: 0;
     right: -17px;
 }
 

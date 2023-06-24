@@ -98,7 +98,6 @@ function enviar(){
             return false;
         }
         else{
-            alert("Has completado el formulario !");
             return true;
         }
     }
