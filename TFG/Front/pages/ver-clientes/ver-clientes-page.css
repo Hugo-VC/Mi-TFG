@@ -38,4 +38,12 @@ a{
     left: 15px;
 }
 
+.btn-eliminar-cliente {
+    line-height: 1;
+}
+
+.btn-eliminar-cliente:hover {
+    opacity: 0.75;
+}
+
 

@@ -38,4 +38,14 @@ a{
     left: 15px;
 }
 
+.pedido-lineas {
+    font-size: 0.875rem;
+    min-width: 280px;
+}
+
+.pedido-lineas th,
+.pedido-lineas td {
+    vertical-align: middle;
+}
+
 

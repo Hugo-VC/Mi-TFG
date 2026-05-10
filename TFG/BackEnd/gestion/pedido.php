@@ -20,8 +20,19 @@
             $fechaActual = date('d/m/Y');
             $fechaCaducidad = date('d/m/Y', strtotime('+2 weeks'));
 
-            // Convierte los datos en formato JSON
-            $jsonProductos = json_encode($productosCarrito);    
+            $lineas = [];
+            foreach ($productosCarrito as $fila) {
+                if (empty($fila['productos'])) {
+                    continue;
+                }
+                $decoded = json_decode($fila['productos'], true);
+                if (is_array($decoded)) {
+                    foreach ($decoded as $item) {
+                        $lineas[] = $item;
+                    }
+                }
+            }
+            $jsonProductos = json_encode($lineas, JSON_UNESCAPED_UNICODE);
 
             $bd -> crearPedido($idCliente, $jsonProductos, $fechaActual, $fechaCaducidad);
             $bd -> borrarProductosCarrito($idCarrito);

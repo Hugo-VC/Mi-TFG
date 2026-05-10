@@ -267,7 +267,11 @@
         }
 
         public function crearPedido($idCliente, $productos, $fecha, $fecha_caducidad): bool {
-            $consulta = "INSERT INTO pedidos (id_cliente, productos, fecha, fecha_caducidad) VALUES ('$idCliente', '$productos', '$fecha', '$fecha_caducidad')";
+            $idCliente = (int) $idCliente;
+            $productosEsc = mysqli_real_escape_string($this->conexion, $productos);
+            $fechaEsc = mysqli_real_escape_string($this->conexion, $fecha);
+            $fechaCadEsc = mysqli_real_escape_string($this->conexion, $fecha_caducidad);
+            $consulta = "INSERT INTO pedidos (id_cliente, productos, fecha, fecha_caducidad) VALUES ($idCliente, '$productosEsc', '$fechaEsc', '$fechaCadEsc')";
             $creado = false;
             if (mysqli_query($this->conexion, $consulta)) {
                 $creado = true;
@@ -294,8 +298,35 @@
             return $borrado;
         }
 
+        public function eliminarCliente(int $id): bool {
+            $id = (int) $id;
+            $sql = "SELECT id, rol_id, id_carrito FROM usuarios WHERE id = $id";
+            $resultado = mysqli_query($this->conexion, $sql);
+            if (!$resultado || $resultado->num_rows !== 1) {
+                mysqli_close($this->conexion);
+                return false;
+            }
+            $row = $resultado->fetch_assoc();
+            if ((int) $row['rol_id'] !== 2) {
+                mysqli_close($this->conexion);
+                return false;
+            }
+            $idCarrito = (int) $row['id_carrito'];
+
+            mysqli_query($this->conexion, "DELETE FROM pedidos WHERE id_cliente = $id");
+            mysqli_query($this->conexion, "DELETE FROM usuarios WHERE id = $id");
+            if ($idCarrito > 0) {
+                mysqli_query($this->conexion, "DELETE FROM carrito WHERE id_carrito = $idCarrito");
+            }
+
+            mysqli_close($this->conexion);
+            return true;
+        }
+
         public function obtenerPedidos(){
-            $sql = "SELECT * FROM pedidos";
+            $sql = "SELECT p.*, u.email AS email_cliente
+                    FROM pedidos p
+                    LEFT JOIN usuarios u ON p.id_cliente = u.id";
             $resultado = mysqli_query($this->conexion, $sql);
         
             if (!$resultado) {
